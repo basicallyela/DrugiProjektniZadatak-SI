@@ -1,23 +1,280 @@
-.search img {
-    width: 25px;
-    height: 26px;
+body {
+    background-color: #EAE5DB;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
-.search #trazilica {
-    width: 70%;
-    height: 30px;
-    display: inline-block;
-    float: left;
-}
-.search {
-    padding: 10px 10px;
-}
-.logo img{
-    padding: 0px 10px;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    float: left;
-}
+
 header {
-    background-color: black;
+    background-color: #B7AB9F;
+}
+
+
+
+/*navigation*/
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+.abt, .logo {
+    font-size: 16px;
+    margin: 5px 5px;
+    width: 100px;
+    background-color: #B7AB9F;
+    color: white;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+}
+.abt:hover, .logo:hover {
+    background-color: #7F6859;
+}
+
+
+/* Dropdown Button */
+
+.dropbtn {
+    background-color: #B7AB9F;
+    color: white;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    width: 150px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #EAE5DB;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #7F6859;}
+
+
+
+ /*search bar*/
+.search {
+    float:left;
+    margin: 10px 10px;
+    width: 100%;
+    border: solid 1px #000;
+    border-radius: 50px 50px 50px 50px;
+}
+
+.searchBar {
+  padding: 0 10px;
+  color: #7F6859;
+  font-weight: 500;
+  font-size: 15px;
+  border: 3px solid #fff;
+  height: 40px;
+  width: 93.9%;
+  border-radius: 50px 0  0 50px !important;
+}
+
+#searchbtn
+{
+    padding: 0 10px;
+    background:#FFF;
+    font-size: 15px;
+    border: 3px solid #fff;
+    height: 40px;
+    border-radius: 0 50px 50px 0 !important;
+}
+#searchbtn:hover {
+    cursor: pointer;
+}
+#searchbtn:focus {
+    background-color: #7F6859;
+    border: none;
+}
+
+
+/*carousel slike*/
+main .slike .carousel-item::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #453D42;
+    opacity: 0.8;
+}
+main .slike .carousel-caption {
+    align: center;
+    bottom: 115px;
+}
+
+
+
+/*scrollbar*/
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #bcb4ad;
+    border-radius: 1px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 8px #525659; 
+    background: #7F6859;
+    border-radius: 1px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #453D42; 
+  }
+
+/*najpopularnije knjige*//*
+main .najpopularnije .cards-wrapper {
+    display: flex;
+    margin: 10px;
+}
+
+main .najpopularnije {
+    margin: 5px 30px;
+    border: solid 1px #453D42;
+}
+
+main .najpopularnije .card {
+    align-items: center;
+    margin: 0 .5em;
+    width: calc(100%/3.5);
+    overflow-y: scroll;
+}
+main .najpopularnije .card .card-body .btn {
+    background-color: #7F6859;
+    border: solid 1px #453D42; 
+
+}
+main .najpopularnije .card .card-body .btn:hover {
+    background-color: #B7AB9F;
+    border: solid 1px #7F6859;
+}
+
+main .vodi-me-ka-svemu {
+  
+    background-color: #121212;
+    border: solid 1px #453D42;
+    color: #EAE5DB;
+    width: 170px;
+    height: 60px;
+    position: relative;
+    
+    box-shadow: 7px 7px  #7F6859;
+    border-radius: 10px 10px;
+}
+main .vodi-me-ka-svemu:hover {
+  cursor: pointer;
+  background-color: #7F6859; 
+    border: solid 1px #121212;
+    box-shadow: 7px 7px  #453D42;
+}
+main .najpopularnije .tekstdugme {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-items: center;
+  margin: 18px;
+}*/
+
+/*najnovije knjige*/
+main .cards-wrapper {
+  display: flex;
+  margin: 10px;
+}
+
+main .najpopularnije, .najnovije {
+  margin: 5px 30px;
+  border: solid 1px #453D42;
+}
+
+main .card {
+  align-items: center;
+  margin: 0 .5em;
+  width: calc(100%/3.5);
+  overflow-y: scroll;
+}
+main .card .card-body .btn {
+  background-color: #7F6859;
+  border: solid 1px #453D42; 
+
+}
+main .card .card-body .btn:hover {
+  background-color: #B7AB9F;
+  border: solid 1px #7F6859;
+}
+
+main .vodi-me-ka-svemu {
+
+  background-color: #121212;
+  border: solid 1px #453D42;
+  color: #EAE5DB;
+  width: 170px;
+  height: 60px;
+  position: relative;
+  
+  box-shadow: 7px 7px  #7F6859;
+  border-radius: 10px 10px;
+}
+main .vodi-me-ka-svemu:hover {
+cursor: pointer;
+background-color: #7F6859; 
+  border: solid 1px #121212;
+  box-shadow: 7px 7px  #453D42;
+}
+main .tekstdugme {
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-items: center;
+margin: 18px;
+}
+
+main .npslike {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-items: space-between;
+
+}
+main .npslike img {
+  height: auto;
+  width: 300px;
+  margin: 25px 0px;
+}
+main .npslike figure {
+  display: flex;
+align-items: center;
+flex-direction:column;
+justify-items: center;
+  width: calc(100%/3.5);
+  height: 450px;
+  border: solid 2px #453D42;
 }
