@@ -30,6 +30,7 @@ nav {
 }
 .abt:hover, .logo:hover {
     background-color: #7F6859;
+    cursor: pointer;
 }
 
 
@@ -66,11 +67,14 @@ nav {
     display: block;
   }
   
-  .dropdown-content a:hover {background-color: #ddd;}
+  .dropdown-content a:hover {background-color: #ddd;
+    cursor: pointer;}
   
-  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropdown-content {display: block;
+    cursor: pointer;}
   
-  .dropdown:hover .dropbtn {background-color: #7F6859;}
+  .dropdown:hover .dropbtn {background-color: #7F6859;
+    cursor: pointer;}
 
 
 
@@ -90,7 +94,7 @@ nav {
   font-size: 15px;
   border: 3px solid #fff;
   height: 40px;
-  width: 93.9%;
+  width: 94.36%;
   border-radius: 50px 0  0 50px !important;
 }
 
@@ -151,68 +155,16 @@ main .slike .carousel-caption {
     background: #453D42; 
   }
 
-/*najpopularnije knjige*//*
-main .najpopularnije .cards-wrapper {
-    display: flex;
-    margin: 10px;
-}
-
-main .najpopularnije {
-    margin: 5px 30px;
-    border: solid 1px #453D42;
-}
-
-main .najpopularnije .card {
-    align-items: center;
-    margin: 0 .5em;
-    width: calc(100%/3.5);
-    overflow-y: scroll;
-}
-main .najpopularnije .card .card-body .btn {
-    background-color: #7F6859;
-    border: solid 1px #453D42; 
-
-}
-main .najpopularnije .card .card-body .btn:hover {
-    background-color: #B7AB9F;
-    border: solid 1px #7F6859;
-}
-
-main .vodi-me-ka-svemu {
-  
-    background-color: #121212;
-    border: solid 1px #453D42;
-    color: #EAE5DB;
-    width: 170px;
-    height: 60px;
-    position: relative;
-    
-    box-shadow: 7px 7px  #7F6859;
-    border-radius: 10px 10px;
-}
-main .vodi-me-ka-svemu:hover {
-  cursor: pointer;
-  background-color: #7F6859; 
-    border: solid 1px #121212;
-    box-shadow: 7px 7px  #453D42;
-}
-main .najpopularnije .tekstdugme {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-items: center;
-  margin: 18px;
-}*/
-
-/*najnovije knjige*/
+/*najpopularnije knjige i najnovije knjige*/
 main .cards-wrapper {
   display: flex;
   margin: 10px;
 }
 
-main .najpopularnije, .najnovije {
-  margin: 5px 30px;
+main .najpopularnije, .najnovije, .nasa-ponuda {
+  margin: 5px 40px 5px 30px;
   border: solid 1px #453D42;
+  box-shadow: 7px 7px  #453D42;
 }
 
 main .card {
@@ -229,6 +181,7 @@ main .card .card-body .btn {
 main .card .card-body .btn:hover {
   background-color: #B7AB9F;
   border: solid 1px #7F6859;
+  cursor: pointer;
 }
 
 main .vodi-me-ka-svemu {
@@ -244,24 +197,27 @@ main .vodi-me-ka-svemu {
   border-radius: 10px 10px;
 }
 main .vodi-me-ka-svemu:hover {
-cursor: pointer;
-background-color: #7F6859; 
+  cursor: pointer;
+  background-color: #7F6859; 
   border: solid 1px #121212;
   box-shadow: 7px 7px  #453D42;
+  cursor: pointer;
 }
 main .tekstdugme {
-display: flex;
-align-items: center;
-flex-direction: column;
-justify-items: center;
-margin: 18px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-items: center;
+  margin: 18px;
 }
 
+/*nasa ponuda*/
 main .npslike {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-items: space-between;
+  margin: 3%;
 
 }
 main .npslike img {
@@ -270,11 +226,51 @@ main .npslike img {
   margin: 25px 0px;
 }
 main .npslike figure {
+  background-color: #453D42;
   display: flex;
-align-items: center;
-flex-direction:column;
-justify-items: center;
+  align-items: center;
+  flex-direction:column;
+  justify-items: center;
+  margin: 2.5%;
   width: calc(100%/3.5);
   height: 450px;
-  border: solid 2px #453D42;
+  border: solid 1px #453D42;
 }
+main .nasa-ponuda h1 {
+  text-align: center;
+  margin: 40px 0 0 0;
+}
+
+main .nasa-ponuda figcaption p {
+  text-align: center;
+  font-size: normal;
+  margin: 2px 20px;
+  color: #EAE5DB;
+}
+
+main .nasa-ponuda figcaption .mali {
+  text-align: center;
+  font-size: normal;
+  margin: 25px 20px 25px 20px;
+  color: #EAE5DB;
+}
+
+footer {
+  background-color: #453D42;
+  color:#EAE5DB;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer ul {
+  list-style: none;
+  margin: 20px;
+}
+footer .drugi {
+  margin: 20px;
+}
+footer h4 {
+  margin: 10px;
+}
+
