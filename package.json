@@ -1,0 +1,19 @@
+{
+  "name": "cetvrtiprojektnizadatak-si",
+  "version": "1.0.0",
+  "description": "Npm i public api",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basicallyela/CetvrtiProjektniZadatak-SI.git"
+  },
+  "author": "Ela Baljo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/basicallyela/CetvrtiProjektniZadatak-SI/issues"
+  },
+  "homepage": "https://github.com/basicallyela/CetvrtiProjektniZadatak-SI#readme"
+}

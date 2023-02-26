@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="styles.css"/>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+        <title>Search</title>
+        <style>
+          .navigacija{
+            display: flex;
+            flex-direction: row;
+          }
+
+       .outputbooks{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 10px;
+       }
+       .outputBooks{
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+       }
+       .ts{
+        background-color: #453D42;
+       }
+   
+        main .slikica {
+                width: 100vw;
+                height: 80vh;
+                background-image: url(images/read1.jpg);
+                background-size: cover;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                
+            }
+        
+          .trazilica{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+          }
+          .searching{
+            width: 100vw;
+            height: 80vh;
+            background-color: rgba(69,61,66,0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          .searching h1{
+            color: #EAE5DB;
+          }
+          .searching #input{
+            padding-left: 5rem;
+            padding-right: 5rem;
+            height: 10vh;
+            border-left: solid 2px #453D42;
+            border-top: solid 2px #453D42;
+            border-bottom: solid 2px #453D42;
+            border-radius: 50px 0 0 50px;
+            border-right: none;
+          }
+          .searching .serc{
+            border-left: none;
+            border-right: solid 2px #453D42;
+            border-top: solid 2px #453D42;
+            border-bottom: solid 2px #453D42;
+            border-radius: 0 50px 50px 0;
+          }
+          .trazilica button:hover{
+            background-color: #B7AB9F;
+            border: solid 1px #7F6859;
+            cursor: pointer;
+          }
+          .trazilica button:active{
+            background-color: #7F6859;
+            border: solid 1px  #B7AB9F;
+            cursor: pointer;
+          }
+       
+        </style>
+        <script>
+          
+
+
+
+function getBooks(){
+  document.getElementById('output').innerHTML="";
+    fetch("http://openlibrary.org/search.json?q="+document.getElementById("input").value)
+          .then(response => {
+            if (!response.ok) {
+                throw Error('Error');
+            }
+            return response.json();
+          })
+
+          .then(data => {
+                for(var i=0; i<4; i++){
+                      document.getElementById('output').innerHTML+=`<div class="card"><img src="https://savanisbookshop.com/uploads/image/savanisbookshop.jpeg" class="card-img-top" alt="..."><div class="card-body"><h4 class="card-title" style="text-align: center;">${data.docs[i].title}</h4><h5 class="card-subtitle" style="text-align: center;">${data.docs[i].author_name[0]}</h5><p class="card-text" style="text-align: center;">${data.docs[i].subject[0]}</p></div></div>`;
+                  }})
+          
+          .catch(error => {
+            console.log(error);
+            document.getElementById('output').innerHTML+='No results found';
+          })
+          }
+          </script>
+    </head>
+    <body>
+      <header>
+        <!--navigation-->
+         <nav class="navigacija">
+            <div class="navig">
+            <div class="logom">
+              <a href="index.html"><button class="logo"><i class="bi bi-bookshelf"></i>Thrifty</button></a>
+            </div><div class="abtus">
+              <a href="aboutus.html"><button class="abt">About Us</button></a>
+            </div>
+            </div>
+              <a href="signup.html"><button type="button" class="btn btn-dark m-2" style="width: 115px;">Sign up</button></a>
+          </div>
+        
+            </nav>
+      </header>
+
+
+        <main>
+          <div class="ts">
+            <div class="slikica">
+              <div class="searching">
+                <h1>Search Books</h1>
+                <div class="trazilica">
+                <input id="input">
+                <button onclick="getBooks()" class="serc" id="dugme">Search</button>
+                </div></div>
+            </div>
+            </div>
+        
+        <div class="outputbooks">
+        <div class="outputBooks" id="output"></div>
+
+        </div>
+        </main>
+        
+    </body>
+</html>
